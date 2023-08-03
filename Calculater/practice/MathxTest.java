@@ -9,7 +9,6 @@ public class MathxTest extends MathX { // 상수값 선언 = final ex public fin
     // 속성의 결정 = binding (Static binding, Dynamic binding)
     public static void main(String[] args) {
         MathxTest.testRange();
-
         // Heap - reference count
         // double[] numbers = new double[args.length];
 
@@ -54,7 +53,10 @@ public class MathxTest extends MathX { // 상수값 선언 = final ex public fin
         // System.out.println(product(1, 2, 3, 4, 5));
         // System.out.println(MathX.reduceIf(x -> x % 2 == 0, (x, y) -> x * y, 1, 1, 2, 3, 4, 5,
         // 6));
+    
     }
+
+    
 
     private static void testRange() {
         RangeTest.classInveriant();

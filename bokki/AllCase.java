@@ -65,9 +65,22 @@ public class AllCase {
         return i + j;
     }
 
-    public static char[] reduceIf(int i, Predicate predicate, BinaryOperation a, int j, int k,
-            int l, int m, int n, int o, int p) {
-        return null;
+
+    
+    public static int gcd(int x, int y) {
+        while(y != 0) {
+            int swap = y;
+            y = x % y;
+            x = swap;
+        }
+        return x;
+    }
+
+    public static int[] add(int[] numbers) {
+        int deno = numbers[1] * numbers[3];
+        int nume = numbers[0] * numbers[3] + numbers[2] * numbers[1];
+
+        return new int[] {nume, deno};
     }
 
 }

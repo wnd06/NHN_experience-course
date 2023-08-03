@@ -8,7 +8,7 @@ public class FractionalTest {
     public static int[] fractional(int numerator, int denomiator) {
         if (denomiator == 0)
             throw new IllegalArgumentException("분모가 0이야!!");
-        int[] rep = new int[] {numerator, denomiator};
+        // int[] rep = new int[] {numerator, denomiator};
         // 기약분수가 된다.
         // classInvariant(rep);
         return new int[] {numerator, denomiator};
@@ -41,14 +41,9 @@ public class FractionalTest {
         return r[1];
     }
 
-    public static void main(String[] args) {
-
-        int[][] rs = {fractional(1, 2), fractional(2, 4), fractional(4, 8), fractional(5, 10)};
-
-        add(fractional(1, 2), fractional(4, 8));
-        for (int[] r : rs) {
-            System.out.println(toString(r));
-        }
+    public static int[] add(int[] r1, int[] r2) {
+        return fractional(numerator(r1) * denomiator(r2) + numerator(r1) * denomiator(r2),
+                denomiator(r1) * denomiator(r2));
     }
 
     private static String toString(int[] r) {
@@ -60,8 +55,14 @@ public class FractionalTest {
         return numerator(x) == numerator(y) && denomiator(x) == denomiator(y);
     }
 
-    public static int[] add(int[] r1, int[] r2) {
-        return fractional(numerator(r1) * denomiator(r2) + numerator(r1) * denomiator(r2),
-                denomiator(r1) * denomiator(r2));
+    public static void main(String[] args) {
+
+        int[][] rs = {fractional(1, 2), fractional(2, 4), fractional(4, 8), fractional(5, 10)};
+
+        // add(fractional(1, 2), fractional(4, 8));
+        for (int[] r : rs) {
+            System.out.println(toString(r));
+        }
     }
+
 }
