@@ -1,4 +1,4 @@
-package practice;
+package Calculater.practice;
 
 
 public class SumApp { // name space

@@ -1,4 +1,4 @@
-package practice;
+package Calculater.practice;
 
 public final class Multiply implements BinaryOperation {
 

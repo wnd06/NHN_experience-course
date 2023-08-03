@@ -1,4 +1,4 @@
-package practice;
+package Calculater.practice;
 
 import java.util.function.BinaryOperator;
 
@@ -41,9 +41,12 @@ public class MathX {
         return (n * (n + 1)) / 2;
     }
 
-    // static int sum(int min, int max) {
-    // return sum(max) - sum(min - 1);
-    // }
+    static int sum(Range range) {
+        return (int) (sum(range.getUpperBound()) - sum(range.getLowerBound() - 1)); // upperBound 범위
+                                                                                    // 중
+                                                                                    // 가장
+                                                                                    // 큰 값
+    }
 
     // sum :: (int, int) -> int
     // class meathod(?)

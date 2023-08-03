@@ -1,4 +1,4 @@
-package practice;
+package Calculater.practice;
 
 @FunctionalInterface
 public interface Predicate {
