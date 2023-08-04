@@ -1,68 +1,29 @@
 package Calculater.practice;
 
-// 유리수 덧셈 유리수 4개 정수를 받는다 main -> Argument로 받는다. 제약 -> 에러처리 생략 정수의 양식에 맞다면 그냥
-// 양수 음수 구분 -> 0. 2번째 4번째 분모 1번째 3번째 분자 1. 문자열로 받는다. 2. 문자열에서 양, 음 구분, 3.
+import java.util.function.Predicate;
+
+// 1. 유리수 덧셈 유리수 4개 정수를 받는다 main -> Argument로 받는다. 제약 -> 2. 에러처리 생략 정수의 양식에 맞다면 그냥 값을 ,return
+// 3. 통분하는 클래스 작성 그리고 return 값을 배열로 return 4. gcd 메서드 작성 후 적용
+// 5. 예외처리 함수를 새로운 메서드에 적용 6. getter(selector) 작성 7.
 public class FractionalTest {
     private FractionalTest() {}
 
-    public static int[] fractional(int numerator, int denomiator) {
-        if (denomiator == 0)
-            throw new IllegalArgumentException("분모가 0이야!!");
-        // int[] rep = new int[] {numerator, denomiator};
-        // 기약분수가 된다.
-        // classInvariant(rep);
-        return new int[] {numerator, denomiator};
-    }
-
-    private static int gcd(int numerator, int denomiator) {
-
-        while (denomiator != 0) {
-            int swap = denomiator;
-            denomiator = numerator % denomiator;
-            numerator = swap;
-        }
-
-        return numerator;
-    }
-
-    private static void normalize(int[] r) {
-        int g = gcd(r[0], r[1]);
-        r[0] = r[0] / g;
-        r[1] = r[1] / g;
-    }
-
-    public static int numerator(int[] r) {
-        normalize(r); // 분자
-        return r[0];
-    }
-
-    public static int denomiator(int[] r) { // 분모
-        normalize(r);
-        return r[1];
-    }
-
-    public static int[] add(int[] r1, int[] r2) {
-        return fractional(numerator(r1) * denomiator(r2) + numerator(r1) * denomiator(r2),
-                denomiator(r1) * denomiator(r2));
-    }
-
-    private static String toString(int[] r) {
-        String str = numerator(r) + "/" + denomiator(r);
-        return str;
-    }
-
-    public static boolean equals(int[] x, int[] y) {
-        return numerator(x) == numerator(y) && denomiator(x) == denomiator(y);
-    }
-
     public static void main(String[] args) {
 
-        int[][] rs = {fractional(1, 2), fractional(2, 4), fractional(4, 8), fractional(5, 10)};
+        Fractional[] rs = {new Fractional(1, 2), new Fractional(2, 4), new Fractional(4, 8),
+                new Fractional(5, 10)};
 
-        // add(fractional(1, 2), fractional(4, 8));
-        for (int[] r : rs) {
-            System.out.println(toString(r));
+        // Fractional.add(Fractional.fractional(1, 2), Fractional.fractional(4, 8));
+
+        for (Fractional r : rs) {
+            // System.out.println(r.intValue());
+            // Predicate<Fractional> ok = x -> true;
         }
+        System.out.println(MathX.<String>reduceIf(x -> true, (s, s2) -> s + s2, "", "a", "b", "c"));
+        System.out.println(MathX.<String>reduce((s, s2) -> s + s2, "", "a", "b", "c"));
+        // Fractional r = rs[0];
+        // Object e = rs[1];
+        // r.equals(e);
     }
 
 }

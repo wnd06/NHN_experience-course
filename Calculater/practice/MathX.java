@@ -1,6 +1,7 @@
 package Calculater.practice;
 
 import java.util.function.BinaryOperator;
+import java.util.function.Predicate;
 
 public class MathX {
 
@@ -18,15 +19,15 @@ public class MathX {
     // }
 
     // fold-(right, left)
-    static double reduce(BinaryOperation binaryOperation, double init, double... numbers) {
+    static <T> T reduce(BinaryOperator<T> binaryOperation, T init, T... numbers) {
         return reduceIf(x -> true, binaryOperation, init, numbers);
     }
-
-    static double reduceIf(Predicate predicate, BinaryOperation binaryOperation, double init,
-            double... numbers) {
-        double result = init;
-        for (double number : numbers) { // Licskov's Substitution Principle = LSP
-            if (predicate.apply(number))
+    // value semantics
+    static <T> T reduceIf(Predicate<T> predicate, BinaryOperator<T> binaryOperation, T init, 
+            T... numbers) {
+        T result = init;
+        for (T number : numbers) { // Licskov's Substitution Principle = LSP
+            if (predicate.test(number))
                 result = binaryOperation.apply(result, number);
         }
         return result;
@@ -76,3 +77,4 @@ public class MathX {
 
 
 }
+//value simetics, reference simetics -> equaliti
