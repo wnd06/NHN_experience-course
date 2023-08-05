@@ -14,13 +14,13 @@ public interface BinaryOperation<T extends Number> { //Number의 타입만 사�
 //     public Stack pop() {}
 //     public T top() {}
 
-    public static void main(String[] args) {
-        int x = 4;
-        Integer y = new Integer(4); //4가 들어있는 메모리 주소
-        String s = new String("");
-        Object o = s;
-        String s2 = (String) o;
-        System.out.println(s == o);
-    }
-}
+    // public static void main(String[] args) {
+    //     int x = 4;
+    //     Integer y = new Integer(4); //4가 들어있는 메모리 주소
+    //     String s = new String("");
+    //     Object o = s;
+    //     String s2 = (String) o;
+    //     System.out.println(s == o);
+    // }
+//}
 

@@ -33,7 +33,7 @@ public class MathX {
         return result;
     }
 
-    static double product(double... numbers) {
+    static <T> T product(T... numbers) {
         return reduce(new Multiply(), 1, numbers);
     }
 
@@ -64,7 +64,7 @@ public class MathX {
     static double reduce_sum(BinaryOperation binaryOperation, double init, double... numbers) {
         double result = init;
         for (double number : numbers) {
-            result = binaryOperation.apply(result, number);
+            //result = binaryOperation.apply(result, number);
         }
 
         return result;

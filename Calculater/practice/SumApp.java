@@ -43,7 +43,6 @@ public class SumApp { // name space
         System.out.println(product(1, 2, 3));
         System.out.println(sum(10) == product(1, 2, 3, 4, 5, 6, 7, 8, 10, 9));
 
-        BinaryOperation plus = (x, y) -> x * y;
-        System.out.println(MathX.reduce(plus, 1, 1, 2, 3, 4));
+        System.out.println(MathX.<Double>reduce((x, y) -> x + y, 1.0, 1.0, 2.0, 3.0, 4.0));
     }
 }

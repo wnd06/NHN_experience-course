@@ -15,10 +15,10 @@ public class AddApp {
         System.out.println(AllCase.sum_product(1, 2, 3, 4, 5));
 
         BinaryOperation a = (x, y) -> x * y;
-        System.out.println(AllCase.product(a, 1, 1, 3, 5, 2));
+        System.out.println(AllCase.product2(1, 3, 5, 2));
 
         System.out.println(AllCase.multiply(1, 20));
-        System.out.println(AllCase.product(numbers));
+        System.out.println(AllCase.product(1, 2, 3));
         System.out.println(AllCase.product(1, 2, 3, 4, 5));
         BinaryOperation b = (x, y) -> x + y;
         System.out.println(AllCase.sum_product(b, 0, 1, 2, 3, 4));

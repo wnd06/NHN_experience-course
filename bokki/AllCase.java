@@ -21,8 +21,8 @@ public class AllCase {
 
     }
 
-    static double product(BinaryOperation binaryOperation, double init, double... numbers) {
-        return reduce(new Multiply(), init, numbers);
+    static double product2(double... numbers) {
+        return reduce(new Multiply(), 1, numbers);
     }
 
     static double product(double... numbers) {
