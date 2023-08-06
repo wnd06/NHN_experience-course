@@ -10,7 +10,9 @@ public class Fractional extends Number { // name space, 의미를 간추리기 �
                                          // typing
     private int numerator; // numerator는 numerator를 할당받는 공간이며 선언이다.
     private int denominator;
+
     // private int[] rep;
+    public Fractional() {}
 
     public Fractional(int numerator, int denominator) { // 이름은 같지만 다른 규칙을 가지고 있으면 이름은 상관이 없다.
         // this.rep = new int[] {numerator, denominator};
@@ -19,14 +21,12 @@ public class Fractional extends Number { // name space, 의미를 간추리기 �
         classInvariant(); // -----------------------------------------------> 구현 과제
         normalize();
         // 기약분수가 된다.
-
-
     }
 
     private void classInvariant() {
         if (denominator == 0)
             throw new IllegalArgumentException("분모가 0이야!!");
-        this.denominator = denominator; 
+        this.denominator = denominator;
     }
 
     private static int gcd(int numerator, int denominator) {
@@ -64,8 +64,6 @@ public class Fractional extends Number { // name space, 의미를 간추리기 �
         // return rep[1];
         return this.denominator;
     }
-
-
 
     public Fractional add(Fractional r) {
         return new Fractional(

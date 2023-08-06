@@ -56,9 +56,9 @@ public class FractionalTest {
         int[] z = fractional(5, 10);
 
         int[] num = add(fractional(x[0], x[1]), fractional(z[0], z[1]));
-        System.out.println(num[0]);
+        // System.out.println(num[0]);
 
-        // System.out.println(toString(add(fractional(1, 2), fractional(4, 8))));
+        System.out.println(toString(add(fractional(1, 2), fractional(4, 8))));
 
 
     }

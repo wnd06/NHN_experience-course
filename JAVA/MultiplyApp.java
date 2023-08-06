@@ -15,7 +15,7 @@ public class MultiplyApp {
 
         System.out.println(Mathx.multiply(numbers));
         System.out.println(Mathx.multiply(1, 2, 3, 4));
-        System.out.println(Mathx.product(1, 1,2,3));
+        //System.out.println(Mathx.product(1, 1,2,3));
         System.out.println(Mathx.<Integer>reduce((x, y) -> x * y, 1, 1, 2, 3, 4, 5));
     }
 

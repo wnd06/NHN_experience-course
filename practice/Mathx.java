@@ -6,13 +6,13 @@ public class Mathx {
 
     public static int fibonacci(int n) {
         if (n < 0)
-            throw new IllegalArgumentException("fibonacci: n < 0");
+            throw new IllegalArgumentException("fibonacci: n < 0"); // --> preCondition
 
         if (n == 0) // 계산이 끝나는 지점 base condition
             return 0;
         else if (n == 1)
             return 1;
-        return Math.addExact(fibonacci(n - 1), fibonacci(n - 2));
+        return Math.addExact(fibonacci(n - 1), fibonacci(n - 2)); // --> postConditon
         // int[] arr = new int[n + 1];
         // arr[0] = 0;
         // arr[1] = 1;

@@ -9,13 +9,15 @@ public class FractionalTest {
     private FractionalTest() {}
 
     public static void main(String[] args) {
+        Fractional F = new Fractional(1, 3);
+        System.out.println(F.add(F));
 
         Fractional[] rs = {new Fractional(1, 2), new Fractional(2, 4), new Fractional(4, 8),
                 new Fractional(5, 10)};
 
-        // Fractional.add(Fractional.fractional(1, 2), Fractional.fractional(4, 8));
+        for (Fractional r : rs) { // r로 Fractional 객체 가져옴. rs의 있는 값으로 add에 값 저장.
 
-        for (Fractional r : rs) {
+            System.out.println(r.add(r));
             // System.out.println(r.intValue());
             // Predicate<Fractional> ok = x -> true;
         }
@@ -24,6 +26,17 @@ public class FractionalTest {
         // Fractional r = rs[0];
         // Object e = rs[1];
         // r.equals(e);
+
+    }
+
+    // 예외처리
+    public static void classInveriant() {
+        try {
+            Fractional F = new Fractional(0, 0);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
     }
 
 }

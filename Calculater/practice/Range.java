@@ -28,5 +28,5 @@ public final class Range {
     }
     // modifiers/mutator - setters
     //Range는 처음 주어진 범위의 값을 변경하면 안되기 때문에 setter는 사용하면 안된다.
-    // 그러므로 setter는 만들 필요가
+    // 그러므로 setter는 만들 필요가 없다
 }
