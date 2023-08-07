@@ -26,9 +26,9 @@ public class MathX {
     static <T> T reduceIf(Predicate<T> predicate, BinaryOperator<T> binaryOperation, T init, 
             T... numbers) {
         T result = init;
-        for (T number : numbers) { // Licskov's Substitution Principle = LSP
-            if (predicate.test(number))
-                result = binaryOperation.apply(result, number);
+        for (int index = 0; index < numbers.length; index++) { // Licskov's Substitution Principle = LSP
+            if (predicate.test(numbers[index]))
+                result = binaryOperation.apply(result, numbers[index]);
         }
         return result;
     }

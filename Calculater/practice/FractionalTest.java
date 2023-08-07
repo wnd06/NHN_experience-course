@@ -15,7 +15,7 @@ public class FractionalTest {
         Fractional[] rs = {new Fractional(1, 2), new Fractional(2, 4), new Fractional(4, 8),
                 new Fractional(5, 10)};
 
-        for (Fractional r : rs) { // r로 Fractional 객체 가져옴. rs의 있는 값으로 add에 값 저장.
+        for (Fractional r : rs) { // r로 Fractional 객체 가져옴. rs의 있는 값으로 add에 값 저장. -> Fractional r = new Fractional(1, 2);
 
             System.out.println(r.add(r));
             // System.out.println(r.intValue());

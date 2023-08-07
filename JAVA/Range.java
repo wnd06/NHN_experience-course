@@ -28,4 +28,9 @@ public class Range {
     public int getY() {
         return this.y = y;
     }
+
+    public static int add(Range range) { //add공식은 따로 있어야함 이 구간은 그저 getter에서 가져온 값을 연산코드에 넣어주는 역할
+        return Mathx.add(range.getX(), range.getY());
+    }
+    
 }

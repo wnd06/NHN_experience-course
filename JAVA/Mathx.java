@@ -55,9 +55,7 @@ public class Mathx {
         return result;
     }
 
-    public static int add(Range range) {
-        return add(range.getX(), range.getY());
-    }
+    
 
     // public static <T> T product(T init, T... numbers) {
     //     BinaryOperator<T> b = (x, y) -> x * y;
