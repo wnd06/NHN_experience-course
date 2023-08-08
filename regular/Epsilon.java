@@ -15,7 +15,7 @@ public class Epsilon implements Expression {
 
     // public static synchronized Epsilon getInstance() {
     //     if(instance == null) {
-    //     instance = new Epsilon();
+    //     instance = new Epsilon()
     //     }
     //     return instance;
     // }

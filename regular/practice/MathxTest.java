@@ -1,4 +1,4 @@
-package practice;
+package regular.practice;
 
 public class MathxTest {
 

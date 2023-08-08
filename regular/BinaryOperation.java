@@ -1,18 +1,19 @@
 package regular;
 
-abstract class BinaryOperation implements Expression {
+class BinaryOperation{ // --> default scope 외부에서 사용 불가능
     private Expression right;
     private Expression left;
-   // private String operator;
+    private String operator;
 
     // protected BinaryOperation(Expression left, String operator, Expression right) {
     //     this.left = left;
     //     this.right = right;
     //   //  this.operator = operator;
     // }
-    protected BinaryOperation(Expression left, Expression right) {
+    protected BinaryOperation(Expression left, String string, Expression right) {
         this.left = left;
         this.right = right;
+        this.operator = operator;
     }
 
     public Expression getRight() {
@@ -28,5 +29,11 @@ abstract class BinaryOperation implements Expression {
         return "(" + this.getLeft().toString() + this.getOperator() + this.getRight().toString() + ")";
     }
 
-    public abstract String getOperator();
+    String getOperator() {
+        return operator;
+    }
+
+    //public abstract String getOperator();
+
+    // BinaryOperation e = new Or(a, b);
 }
