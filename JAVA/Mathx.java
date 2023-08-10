@@ -1,9 +1,11 @@
 package JAVA;
 
+import java.util.ArrayList;
 import java.util.function.BinaryOperator;
+import java.util.Iterator;
 import Calculater.practice.BinaryOperation;
 
-public class Mathx {
+public class Mathx implements BinaryOperation2<Integer> {
 
     public static double[] result(double result) { 
         if (result >= Double.MAX_VALUE)
@@ -47,11 +49,10 @@ public class Mathx {
         return result;
     }
 
-    public static <T> T reduce(BinaryOperator<T> binaryOperation2, T init, T... numbers) {
+    public static <T> T reduce(BinaryOperator<T> binaryOperation2, T init, Iterator <T> iterator) {
         T result = init;
-        for (T number : numbers) {
-            result = binaryOperation2.apply(result, number);
-        }
+        T a = init;
+        
         return result;
     }
 

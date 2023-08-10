@@ -6,9 +6,11 @@ public class Epsilon implements Expression {
 
     private Epsilon() {}
 
-    @Override
-    public String toString() {
-        return "\u03B5";
+    
+   
+
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 
     

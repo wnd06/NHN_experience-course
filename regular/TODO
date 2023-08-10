@@ -1,0 +1,9 @@
+1. Matcher라는 Visitor subtype 개발
+    Expression e = [a-Z][a-zA-Z0-9]* -> 소문자 
+    e.match("56a") -> false
+    Matcher v = new Matcher(e);
+    v.match("45e") -> false
+2. Visitor<T>에서 literals 방식으로 개발
+public final class Literals implement Visitor<String>
+3. reduceIf의 var args/array 대신해 Iterator<T>를 쓰도록 개발
+4. reduceIf의 Iterator version 코드를 놓고, BinaryOperation subtype으로 풀 수 있는 수수께기

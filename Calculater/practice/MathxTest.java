@@ -1,5 +1,7 @@
 package Calculater.practice;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class MathxTest extends MathX { // 상수값 선언 = final ex public final class PrintArgs
 
@@ -8,8 +10,8 @@ public class MathxTest extends MathX { // 상수값 선언 = final ex public fin
     // 이름이 남직 속성들을 간추린다. abstraction 한다.
     // 속성의 결정 = binding (Static binding, Dynamic binding)
     public static void main(String[] args) {
-        MathxTest.testRange();
-        MathxTest.testFractional();
+        // MathxTest.testRange();
+        // MathxTest.testFractional();
         // Heap - reference count
         // double[] numbers = new double[args.length];
 
@@ -17,10 +19,10 @@ public class MathxTest extends MathX { // 상수값 선언 = final ex public fin
         // numbers[index] = Double.valueOf(args[index]);
         // }
         // System.out.println(sum(1, 2, 3));
-         //System.out.println(sum(numbers));
-         System.out.println(sum(new Range(10)));
-         System.out.println(sum(new Range(0, 10)));
-         System.out.println(sum(new Range(5, 10)));
+        // System.out.println(sum(numbers));
+        System.out.println(sum(new Range(10)));
+        System.out.println(sum(new Range(0, 10)));
+        System.out.println(sum(new Range(5, 10)));
         // System.out.println(sum(5) == sum(1, 2, 3, 4, 5));
         // System.out.println(Sum(1, 2, 3, 4, 5, 6));
 
@@ -54,7 +56,18 @@ public class MathxTest extends MathX { // 상수값 선언 = final ex public fin
         // System.out.println(product(1, 2, 3, 4, 5));
         // System.out.println(MathX.reduceIf(x -> x % 2 == 0, (x, y) -> x * y, 1, 1, 2, 3, 4, 5,
         // 6));
+        ArrayList<Double> list_nums = new ArrayList<>();
+        list_nums.add(3.0);
+        list_nums.add(5.0);
+        list_nums.add(2.0);
+        Iterator<Double> iterator = list_nums.iterator();
+        Iterator<Double> iterator2 = list_nums.iterator();
+
+        System.out.println(MathX.<Double>reduceIf(x -> true, (x, y) -> x + y, 0.0, iterator));
+        System.out.println(MathX.<Double>reduce((x, y) -> x + y, 0.0, iterator2));
+        System.out.println(Sum(iterator, 1.0));
     }
+
     private static void testFractional() {
         FractionalTest.classInveriant();
     }

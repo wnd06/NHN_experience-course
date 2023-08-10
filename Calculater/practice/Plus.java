@@ -1,9 +1,9 @@
 package Calculater.practice;
 
-public final class Plus implements BinaryOperation {
+public final class Plus implements BinaryOperation<Integer> {
 
     @Override
-    public double apply(double x, double y) {
+    public Integer apply(Integer x, Integer y) {
         return x + y;
     }
 

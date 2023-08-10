@@ -1,4 +1,4 @@
-public class 실험 {
+public class 실험 implements Top{
 
     public static void main(String[] args) {
         Top leftTop = new Left();

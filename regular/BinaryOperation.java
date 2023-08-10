@@ -24,13 +24,10 @@ class BinaryOperation{ // --> default scope 외부에서 사용 불가능
         return left;
     }
 
-    @Override
-    public String toString() {
-        return "(" + this.getLeft().toString() + this.getOperator() + this.getRight().toString() + ")";
-    }
+   
 
     String getOperator() {
-        return operator;
+        return this.operator;
     }
 
     //public abstract String getOperator();

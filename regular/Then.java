@@ -7,9 +7,13 @@ public final class Then extends BinaryOperation implements Expression{
         //super(left, right);
       }
 
-    @Override
-    public String getOperator() {
-        return "";
+    // @Override
+    // public String getOperator() {
+    //     return "";
+    // }
+
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
     
 }

@@ -15,5 +15,6 @@ public interface Expression {
     public default Expression star() {
         return new Star(this);
     }
-
+    
+    public void accept(Visitor visitor);
 }

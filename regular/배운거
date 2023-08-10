@@ -1,0 +1,28 @@
+- 계산 절차에서 같은 부분을 솎아 올려서 코드 쓰임새를 늘리는 설계 공부
+(Procedural Abstraction) sum > product > reduce, functional interface/ 
+lambda Expression으로 function(named closure)를 parameter로 넘기는 공부
+    -Ad hoc polymphism - overloading
+    - parametric polymorphism(generic)
+- Fractional Data type을 설계하는 공부 
+    - class/type, type = {operations}, 
+    - type definition = a set of primitive 공부
+    - Abstraction (what/how) barrier
+    - class invariant
+    - how = implementation/representation
+    - ctor/selector(getter)/modifier(setter)/predicate - equals, reference
+        - equals, reference semantics vs value semantics
+        - parameter passing - call by value
+- Fibonacci, Factorial 같은 recursion (induction) : Testing,
+Process Visualization
+    - recursive structure에 바탕을 둔 test-first code
+    - process 전개되는 지를 보고 order of growth
+        - linear process, tree process
+        - procedure vs process
+- Regular Expression (abstarct) class, interface: Software Design
+    - subtyping polymorphism
+    - subtyping vs subclassing, LSP
+    - Interpreter, Visitor Pattern들이 type을 보태거나 op을 보태거나,
+    sw를 늘리거나 고치는 데 어떤 문제를 푸는데 유리한가
+    -dynamic dispatch - RTTI, method overriding = single dispatch
+
+    Programming in the Large

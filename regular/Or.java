@@ -4,13 +4,19 @@ public final class Or extends BinaryOperation implements Expression { //코드�
 
     public Or(Expression left, Expression right) {
         super(left, "|", right);
-        // super(left, "|", right);
+        // 6super(left, "|", right);
         
       }
 
     @Override
     public String getOperator() {
         return "|";
+    }
+
+    // "|" 제외
+    
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 
 }

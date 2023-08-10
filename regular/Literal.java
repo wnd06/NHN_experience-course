@@ -11,10 +11,10 @@ public final class Literal implements Expression{
         return character;
     }
 
-
-    @Override
-    public String toString() {
-        return String.valueOf(character);
+    //toString은 엮으면 안됨! -> toString 과 literals의 목적이 서로 다르기 때문이다.
+    
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 
 }

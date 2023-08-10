@@ -12,12 +12,12 @@ public final class Star implements Expression{
     
     public Expression getA() {
         return a;
-    }
+    } 
 
-    @Override
-    public String toString() {
-        return "(" + this.getA().toString() + ")" + "*";
-    }
+    @Override   
     
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
 
 }

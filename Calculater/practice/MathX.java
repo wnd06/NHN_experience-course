@@ -2,6 +2,7 @@ package Calculater.practice;
 
 import java.util.function.BinaryOperator;
 import java.util.function.Predicate;
+import java.util.Iterator;
 
 public class MathX {
 
@@ -15,31 +16,38 @@ public class MathX {
     // result = result * number;
     // }
     // return result;
-
+    // 최민영 최고
     // }
 
     // fold-(right, left)
-    static <T> T reduce(BinaryOperator<T> binaryOperation, T init, T... numbers) {
-        return reduceIf(x -> true, binaryOperation, init, numbers);
+    static <T> T reduce(BinaryOperator<T> binaryOperation, T init, Iterator<T> iterator) { // 배열말고
+                                                                                           // iterator
+        return reduceIf(x -> true, binaryOperation, init, iterator);
     }
+
     // value semantics
-    static <T> T reduceIf(Predicate<T> predicate, BinaryOperator<T> binaryOperation, T init, 
-            T... numbers) {
+    static <T> T reduceIf(Predicate<T> predicate, BinaryOperator<T> binaryOperation, T init,
+            Iterator<T> iterator) {
         T result = init;
-        for (int index = 0; index < numbers.length; index++) { // Licskov's Substitution Principle = LSP
-            if (predicate.test(numbers[index]))
-                result = binaryOperation.apply(result, numbers[index]);
+        while (iterator.hasNext()) {
+            T i = iterator.next();
+            if (predicate.test(i))
+                result = binaryOperation.apply(i, result);
         }
+
         return result;
     }
 
-    static <T> T product(T... numbers) {
-        return reduce(new Multiply(), 1, numbers);
+    static <T> T product(Iterator<T> iterator,T init) {
+        
+        return reduce(new Multiply(), init, iterator);
+        // 이중민 존나멋짐
     }
 
     // sum :: int -> int
     static double sum(double n) { // Overloading
         return (n * (n + 1)) / 2;
+        // 백준잣밥쓰
     }
 
     static int sum(Range range) {
@@ -61,20 +69,19 @@ public class MathX {
         return result;
     }
 
-    static double reduce_sum(BinaryOperation binaryOperation, double init, double... numbers) {
-        double result = init;
-        for (double number : numbers) {
-            //result = binaryOperation.apply(result, number);
+    static <T> T reduce_sum(BinaryOperation binaryOperation, T init, Iterator<T> iterator) {
+        T result = init;
+        while(iterator.hasNext()) {
+            result = (T) binaryOperation.apply((Number)result, (Number)iterator.next());
         }
-
         return result;
     }
 
-    static double Sum(double... numbers) {
-        return reduce_sum(new Multiply(), 0, numbers);
+    static <T> T Sum(Iterator<T> iterator, T init) {
+        return reduce_sum(new Multiply(), init, iterator);
     }
 
 
 
 }
-//value simetics, reference simetics -> equaliti
+// value simetics, reference simetics -> equaliti
