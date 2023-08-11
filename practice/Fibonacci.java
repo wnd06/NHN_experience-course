@@ -1,4 +1,4 @@
-package regular.practice;
+package practice;
 
 public class Fibonacci {
     public static void main(String[] args) {

@@ -42,7 +42,7 @@ public final class Literals implements regular.Visitor {
     }
     
     public static String of(regular.Expression e) {
-        Literals literals = new Literals();
+        Literals literals = new Literals(); 
         e.accept(literals);
         return literals.getLiteralStringBuilder();
     }

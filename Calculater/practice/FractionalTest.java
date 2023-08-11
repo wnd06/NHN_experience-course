@@ -1,5 +1,6 @@
 package Calculater.practice;
 
+import java.util.ArrayList;
 import java.util.function.Predicate;
 
 // 1. 유리수 덧셈 유리수 4개 정수를 받는다 main -> Argument로 받는다. 제약 -> 2. 에러처리 생략 정수의 양식에 맞다면 그냥 값을 ,return
@@ -14,7 +15,8 @@ public class FractionalTest {
 
         Fractional[] rs = {new Fractional(1, 2), new Fractional(2, 4), new Fractional(4, 8),
                 new Fractional(5, 10)};
-
+        ArrayList <Fractional> list = new ArrayList<>();
+        list.add(new Fractional(1,2));
         for (Fractional r : rs) { // r로 Fractional 객체 가져옴. rs의 있는 값으로 add에 값 저장. -> Fractional r = new Fractional(1, 2);
 
             System.out.println(r.add(r));

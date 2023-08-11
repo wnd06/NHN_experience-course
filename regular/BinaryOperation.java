@@ -13,7 +13,7 @@ class BinaryOperation{ // --> default scope 외부에서 사용 불가능
     protected BinaryOperation(Expression left, String string, Expression right) {
         this.left = left;
         this.right = right;
-        this.operator = operator;
+        this.operator = operator; // -> "|" ,  "" 
     }
 
     public Expression getRight() {

@@ -54,14 +54,21 @@ public class MathxTest extends MathX { // 상수값 선언 = final ex public fin
         // System.out.println(product(4, 5, 6));
         // System.out.println(product(3, 4, 5, 6, 123));
         // System.out.println(product(1, 2, 3, 4, 5));
-        // System.out.println(MathX.reduceIf(x -> x % 2 == 0, (x, y) -> x * y, 1, 1, 2, 3, 4, 5,
-        // 6));
+
         ArrayList<Double> list_nums = new ArrayList<>();
         list_nums.add(3.0);
         list_nums.add(5.0);
         list_nums.add(2.0);
+        ArrayList<Integer> list_nums2 = new ArrayList<>();
+        list_nums2.add(3);
+        list_nums2.add(5);
+        list_nums2.add(2);
+
         Iterator<Double> iterator = list_nums.iterator();
         Iterator<Double> iterator2 = list_nums.iterator();
+        Iterator<Integer> iterator3 = list_nums2.iterator();
+        //짝수만 더하기
+        System.out.println(MathX.reduceIf(x -> x % 2 == 0, (x, y) -> x + y, 0, iterator3));
 
         System.out.println(MathX.<Double>reduceIf(x -> true, (x, y) -> x + y, 0.0, iterator));
         System.out.println(MathX.<Double>reduce((x, y) -> x + y, 0.0, iterator2));

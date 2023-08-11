@@ -1,4 +1,4 @@
-package regular.practice;
+package practice;
 
 public class Mathx {
     private Mathx() {}

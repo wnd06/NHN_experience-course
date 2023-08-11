@@ -11,7 +11,7 @@ public class Mathx {
         return reduceIf(x -> true, binaryOperation, init, iterator);
     }
 
-    public static <T> T reduceIf(Predicate predicate, BinaryOperator<T> binaryOperator, T init, Iterator<T> iterator) {
+    public static <T> T reduceIf(Predicate<T> predicate, BinaryOperator<T> binaryOperator, T init, Iterator<T> iterator) {
         T result = init;
         while(iterator.hasNext()) {
             T i = iterator.next();

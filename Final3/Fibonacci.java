@@ -1,7 +1,5 @@
 package Final3;
 
-import regular.practice.FactorialTest;
-
 public class Fibonacci {
 
 
